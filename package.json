@@ -1,21 +1,21 @@
 {
   "name": "aws-lambda-multipart-parser",
   "version": "0.1.3",
-  "description": "Parser of multipart/form-data requests for AWS Lambda",
+  "description": "Parser of multipart/form-data requests for AWS Lambda with typed output, based on the recently inactive myshenin/aws-lambda-multipart-parser",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/myshenin/aws-lambda-multipart-parser.git"
+    "url": "git+https://github.com/vivasvan/aws-multipart-parser.git"
   },
-  "author": "Anton Myshenin",
+  "author": "Viv Paranjape",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/myshenin/aws-lambda-multipart-parser/issues"
+    "url": "https://github.com/vivasvan/aws-multipart-parser.git/issues"
   },
-  "homepage": "https://github.com/myshenin/aws-lambda-multipart-parser#readme",
+  "homepage": "https://github.com/vivasvan/aws-multipart-parser.git#readme",
   "keywords": [
     "aws",
     "lambda",
