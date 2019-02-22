@@ -1,18 +1,27 @@
-function getValueIgnoringKeyCase(object, key) {
+import { APIGatewayProxyEvent } from 'aws-lambda';
+
+function getValueIgnoringKeyCase(object: Object, key: string) {
     const foundKey = Object
         .keys(object)
         .find(currentKey => currentKey.toLocaleLowerCase() === key.toLowerCase());
     return object[foundKey];
 }
 
-function getBoundary(event) {
+function getBoundary(event: APIGatewayProxyEvent) {
     return getValueIgnoringKeyCase(event.headers, 'Content-Type').split('=')[1];
 }
 
-module.exports.parse = (event, spotText) => {
+function getBody(event: APIGatewayProxyEvent): string {
+    if (event.isBase64Encoded) {
+        return Buffer.from(event.body, 'base64').toString('binary');
+    }
+    return event.body;
+}
+
+export let parse = (event: APIGatewayProxyEvent, spotText: boolean) => {
     const boundary = getBoundary(event);
     const result = {};
-    event.body
+    getBody(event)
         .split(boundary)
         .forEach(item => {
             if (/filename=".+"/g.test(item)) {
