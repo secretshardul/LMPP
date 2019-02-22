@@ -1,4 +1,5 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
+import { MultipartFormData } from './models';
 
 function getValueIgnoringKeyCase(object: Object, key: string) {
     const foundKey = Object
@@ -20,7 +21,7 @@ function getBody(event: APIGatewayProxyEvent): string {
 
 export let parse = (event: APIGatewayProxyEvent, spotText: boolean) => {
     const boundary = getBoundary(event);
-    const result = {};
+    const result : MultipartFormData = {};
     getBody(event)
         .split(boundary)
         .forEach(item => {
