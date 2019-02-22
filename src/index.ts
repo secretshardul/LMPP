@@ -8,7 +8,7 @@ function getValueIgnoringKeyCase(object: Object, key: string) {
     return object[foundKey];
 }
 
-function getBoundary(event: APIGatewayProxyEvent) {
+function getBoundary(event: APIGatewayProxyEvent): string {
     return getValueIgnoringKeyCase(event.headers, 'Content-Type').split('=')[1];
 }
 
@@ -19,7 +19,7 @@ function getBody(event: APIGatewayProxyEvent): string {
     return event.body;
 }
 
-export let parse = (event: APIGatewayProxyEvent, spotText: boolean) => {
+export let parse = (event: APIGatewayProxyEvent, spotText: boolean): MultipartFormData =>  {
     const boundary = getBoundary(event);
     const result : MultipartFormData = {};
     getBody(event)

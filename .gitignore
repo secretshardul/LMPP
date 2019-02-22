@@ -60,5 +60,3 @@ typings/
 # Intellij Idea folder
 .idea/
 
-# Ignore dist
-dist
