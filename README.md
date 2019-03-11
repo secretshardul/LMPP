@@ -29,8 +29,13 @@ handler.js
 ```
 import { parse } from 'aws-multipart-parser'
 
+// ...
+
 exports.myHandler = function(event, context, callback) {
     const formData = parse(event, true);
+
+    // do stuff
+
     callback(null, "some success message");
 }
 ```

@@ -1,6 +1,6 @@
 {
   "name": "aws-multipart-parser",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Parser of multipart/form-data requests for AWS Lambda with typed output, based on the recently inactive myshenin/aws-lambda-multipart-parser",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
