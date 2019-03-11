@@ -27,9 +27,7 @@
     "formdata",
     "parser"
   ],
-  "devDependencies": {
-    "jest": "^24.1.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "@types/aws-lambda": "^8.10.19"
   }
